@@ -158,4 +158,14 @@ def agregar_implante(sistema):
     else:
         print("Tipo de implante no válido.")
 
-    
+def eliminar_implante(sistema):
+    id_implante = int(input("Ingrese el ID del implante que desea eliminar: "))
+    sistema.eliminar_implante(id_implante)
+    print("Implante eliminado con éxito.")
+
+def editar_implante(sistema):
+    id_implante = int(input("Ingrese el ID del implante que desea editar: "))
+    implante = [i for i in sistema._inventario if i._id == id_implante]
+    if not implante:
+        print("Implante no encontrado.")
+        return
