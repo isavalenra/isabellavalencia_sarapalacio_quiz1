@@ -189,3 +189,12 @@ def editar_implante(sistema):
     valor = input("Ingrese el nuevo valor para el atributo: ")
     sistema.editar_implante(id_implante, atributo, valor)
     print("Implante editado con éxito.")
+
+def asociar_implante_paciente(sistema):
+    id_implante = int(input("Ingrese el ID del implante que desea asociar a un paciente: "))
+    paciente = input("Ingrese el nombre del paciente: ")
+    fecha_implantacion = input("Ingrese la fecha de implantación (YYYY-MM-DD): ")
+    medico_responsable = input("Ingrese el médico responsable: ")
+    estado_implante = input("Ingrese el estado del implante: ")
+    sistema.asociar_implante_paciente(id_implante, paciente, fecha_implantacion, medico_responsable, estado_implante)
+    print("Implante asociado a paciente con éxito.")
