@@ -211,3 +211,5 @@ def registrar_mantenimiento_implante(sistema):
     sistema.registrar_mantenimiento_implante(id_implante, fecha_mantenimiento)
     print("Mantenimiento registrado con éxito.")
 
+def visualizar_inventario(sistema):
+    sistema.visualizar_inventario()
