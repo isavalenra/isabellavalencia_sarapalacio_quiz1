@@ -198,3 +198,16 @@ def asociar_implante_paciente(sistema):
     estado_implante = input("Ingrese el estado del implante: ")
     sistema.asociar_implante_paciente(id_implante, paciente, fecha_implantacion, medico_responsable, estado_implante)
     print("Implante asociado a paciente con éxito.")
+
+def registrar_revision_implante(sistema):
+    id_implante = int(input("Ingrese el ID del implante al que desea registrar una revisión: "))
+    fecha_revision = input("Ingrese la fecha de la revisión (YYYY-MM-DD): ")
+    sistema.registrar_revision_implante(id_implante, fecha_revision)
+    print("Revisión registrada con éxito.")
+
+def registrar_mantenimiento_implante(sistema):
+    id_implante = int(input("Ingrese el ID del implante al que desea registrar un mantenimiento: "))
+    fecha_mantenimiento = input("Ingrese la fecha del mantenimiento (YYYY-MM-DD): ")
+    sistema.registrar_mantenimiento_implante(id_implante, fecha_mantenimiento)
+    print("Mantenimiento registrado con éxito.")
+
