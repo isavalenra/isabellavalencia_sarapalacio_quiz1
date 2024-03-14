@@ -61,3 +61,20 @@ class StentCoronario(ImplanteMedico):
     def __str__(self):
         return f'ID: {self._id}, Tipo: {self._tipo}, Material: {self._material}, Tamaño: {self._tamaño}, Longitud: {self._longitud}, Diámetro: {self._diámetro}, Fecha de fabricación: {self._fecha_fabricacion.strftime("%Y-%m-%d")}, Fecha de vencimiento: {self._obtener_fecha_vencimiento()}, Paciente: {self._paciente}, Fecha de implantación: {self._fecha_implantacion}, Médico responsable: {self._medico_responsable}, Estado del implante: {self._estado_implante}, Última revisión: {self._fecha_ultima_revision}, Último mantenimiento: {self._fecha_ultimo_mantenimiento}'
 
+class ImplanteDental(ImplanteMedico):
+    def __init__(self, tipo, material, tamaño, forma, sistema_fijacion):
+        super().__init__(tipo, material, tamaño)
+        self._forma = forma
+        self._sistema_fijacion = sistema_fijacion
+
+    def __str__(self):
+        return f'ID: {self._id}, Tipo: {self._tipo}, Material: {self._material}, Tamaño: {self._tamaño}, Forma: {self._forma}, Sistema de fijación: {self._sistema_fijacion}, Fecha de fabricación: {self._fecha_fabricacion.strftime("%Y-%m-%d")}, Fecha de vencimiento: {self._obtener_fecha_vencimiento()}, Paciente: {self._paciente}, Fecha de implantación: {self._fecha_implantacion}, Médico responsable: {self._medico_responsable}, Estado del implante: {self._estado_implante}, Última revisión: {self._fecha_ultima_revision}, Último mantenimiento: {self._fecha_ultimo_mantenimiento}'
+
+class ProtesisRodilla(ImplanteMedico):
+    def __init__(self, tipo, material, tamaño, fijacion):
+        super().__init__(tipo, material, tamaño)
+        self._fijacion = fijacion
+
+    def __str__(self):
+        return f'ID: {self._id}, Tipo: {self._tipo}, Material: {self._material}, Tamaño: {self._tamaño}, Fijación: {self._fijacion}, Fecha de fabricación: {self._fecha_fabricacion.strftime("%Y-%m-%d")}, Fecha de vencimiento: {self._obtener_fecha_vencimiento()}, Paciente: {self._paciente}, Fecha de implantación: {self._fecha_implantacion}, Médico responsable: {self._medico_responsable}, Estado del implante: {self._estado_implante}, Última revisión: {self._fecha_ultima_revision}, Último mantenimiento: {self._fecha_ultimo_mantenimiento}'
+
