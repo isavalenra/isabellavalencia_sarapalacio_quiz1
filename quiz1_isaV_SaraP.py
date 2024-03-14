@@ -47,3 +47,17 @@ class Marcapasos(ImplanteMedico):
         self._frecuencia_estimulacion = frecuencia_estimulacion
         self._numero_electrodos = numero_electrodos
         self._inalambrico = inalambrico
+
+    def __str__(self):
+        inalambrico_str = "Sí" if self._inalambrico else "No"
+        return f'ID: {self._id}, Tipo: {self._tipo}, Material: {self._material}, Tamaño: {self._tamaño}, Frecuencia de estimulación: {self._frecuencia_estimulacion}, Número de electrodos: {self._numero_electrodos}, Inalámbrico: {inalambrico_str}, Fecha de fabricación: {self._fecha_fabricacion.strftime("%Y-%m-%d")}, Fecha de vencimiento: {self._obtener_fecha_vencimiento()}, Paciente: {self._paciente}, Fecha de implantación: {self._fecha_implantacion}, Médico responsable: {self._medico_responsable}, Estado del implante: {self._estado_implante}, Última revisión: {self._fecha_ultima_revision}, Último mantenimiento: {self._fecha_ultimo_mantenimiento}'
+
+class StentCoronario(ImplanteMedico):
+    def __init__(self, tipo, material, tamaño, longitud, diámetro):
+        super().__init__(tipo, material, tamaño)
+        self._longitud = longitud
+        self._diámetro = diámetro
+
+    def __str__(self):
+        return f'ID: {self._id}, Tipo: {self._tipo}, Material: {self._material}, Tamaño: {self._tamaño}, Longitud: {self._longitud}, Diámetro: {self._diámetro}, Fecha de fabricación: {self._fecha_fabricacion.strftime("%Y-%m-%d")}, Fecha de vencimiento: {self._obtener_fecha_vencimiento()}, Paciente: {self._paciente}, Fecha de implantación: {self._fecha_implantacion}, Médico responsable: {self._medico_responsable}, Estado del implante: {self._estado_implante}, Última revisión: {self._fecha_ultima_revision}, Último mantenimiento: {self._fecha_ultimo_mantenimiento}'
+
