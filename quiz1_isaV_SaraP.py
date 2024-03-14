@@ -78,3 +78,18 @@ class ProtesisRodilla(ImplanteMedico):
     def __str__(self):
         return f'ID: {self._id}, Tipo: {self._tipo}, Material: {self._material}, Tamaño: {self._tamaño}, Fijación: {self._fijacion}, Fecha de fabricación: {self._fecha_fabricacion.strftime("%Y-%m-%d")}, Fecha de vencimiento: {self._obtener_fecha_vencimiento()}, Paciente: {self._paciente}, Fecha de implantación: {self._fecha_implantacion}, Médico responsable: {self._medico_responsable}, Estado del implante: {self._estado_implante}, Última revisión: {self._fecha_ultima_revision}, Último mantenimiento: {self._fecha_ultimo_mantenimiento}'
 
+class SistemaGestionImplantes:
+    def __init__(self):
+        self._inventario = []
+
+    def agregar_implante(self, implante):
+        self._inventario.append(implante)
+        print(f"Implante agregado con éxito. ID asignado: {implante._id}")
+
+    def eliminar_implante(self, id_implante):
+        self._inventario = [i for i in self._inventario if i._id != id_implante]
+
+    def editar_implante(self, id_implante, atributo, valor):
+        for implante in self._inventario:
+            if implante._id == id_implante:
+                setattr(implante, f'_{atributo}', valor)
