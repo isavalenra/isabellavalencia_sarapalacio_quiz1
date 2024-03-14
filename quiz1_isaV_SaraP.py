@@ -93,3 +93,18 @@ class SistemaGestionImplantes:
         for implante in self._inventario:
             if implante._id == id_implante:
                 setattr(implante, f'_{atributo}', valor)
+
+    def asociar_implante_paciente(self, id_implante, paciente, fecha_implantacion, medico_responsable, estado_implante):
+        for implante in self._inventario:
+            if implante._id == id_implante:
+                implante.asociar_paciente(paciente, fecha_implantacion, medico_responsable, estado_implante)
+
+    def registrar_revision_implante(self, id_implante, fecha_revision):
+        for implante in self._inventario:
+            if implante._id == id_implante:
+                implante.registrar_revision(fecha_revision)
+
+    def registrar_mantenimiento_implante(self, id_implante, fecha_mantenimiento):
+        for implante in self._inventario:
+            if implante._id == id_implante:
+                implante.registrar_mantenimiento(fecha_mantenimiento)
