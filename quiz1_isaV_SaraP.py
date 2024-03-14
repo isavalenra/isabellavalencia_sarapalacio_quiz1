@@ -169,3 +169,23 @@ def editar_implante(sistema):
     if not implante:
         print("Implante no encontrado.")
         return
+    
+    atributos_disponibles = ["tipo", "material", "tamaño"]
+    if isinstance(implante[0], Marcapasos):
+            atributos_disponibles.extend(["frecuencia_estimulacion", "numero_electrodos", "inalambrico"])
+    elif isinstance(implante[0], ImplanteDental):
+            atributos_disponibles.extend(["forma", "sistema_fijacion"])
+    elif isinstance(implante[0], StentCoronario):
+            atributos_disponibles.extend(["longitud", "diámetro"])
+    elif isinstance(implante[0], ProtesisRodilla) or isinstance(implante[0], ProtesisCadera):
+            atributos_disponibles.extend(["fijacion"])
+
+    print("Atributos disponibles para editar:", atributos_disponibles)
+    atributo = input("Ingrese el atributo que desea editar: ")
+    if atributo not in atributos_disponibles:
+            print("Atributo no válido.")
+            return
+
+    valor = input("Ingrese el nuevo valor para el atributo: ")
+    sistema.editar_implante(id_implante, atributo, valor)
+    print("Implante editado con éxito.")
