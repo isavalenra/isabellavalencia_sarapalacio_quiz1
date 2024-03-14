@@ -114,3 +114,14 @@ class SistemaGestionImplantes:
         for implante in self._inventario:
             if implante._id == id_implante:
                 print(implante)
+
+def agregar_implante(sistema):
+    tipo_implante = input("Ingrese el tipo de implante (Marcapasos / Stent Coronario / Implante Dental / Implante de Rodilla / Implante de Cadera): ")
+    if tipo_implante.lower() == "marcapasos":
+        tipo = tipo_implante
+        material = input("Ingrese el material del marcapasos: ")
+        tamaño = input("Ingrese el tamaño del marcapasos: ")
+        frecuencia_estimulacion = input("Ingrese la frecuencia de estimulación (en ppm): ")
+        numero_electrodos = input("Ingrese el número de electrodos: ")
+        inalambrico = input("Es inalámbrico? (Sí / No): ").lower() == "sí"
+        sistema.agregar_implante(Marcapasos(tipo, material, tamaño, frecuencia_estimulacion, numero_electrodos, inalambrico))
