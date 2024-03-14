@@ -213,3 +213,42 @@ def registrar_mantenimiento_implante(sistema):
 
 def visualizar_inventario(sistema):
     sistema.visualizar_inventario()
+
+def menu():
+    sistema = SistemaGestionImplantes()
+
+    while True:
+        print("\nMenú:")
+        print("1. Agregar implante")
+        print("2. Eliminar implante")
+        print("3. Editar implante")
+        print("4. Asociar implante a paciente")
+        print("5. Registrar revisión de implante")
+        print("6. Registrar mantenimiento de implante")
+        print("7. Visualizar inventario")
+        print("8. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            agregar_implante(sistema)
+        elif opcion == "2":
+            eliminar_implante(sistema)
+        elif opcion == "3":
+            editar_implante(sistema)
+        elif opcion == "4":
+            asociar_implante_paciente(sistema)
+        elif opcion == "5":
+            registrar_revision_implante(sistema)
+        elif opcion == "6":
+            registrar_mantenimiento_implante(sistema)
+        elif opcion == "7":
+            visualizar_inventario(sistema)
+        elif opcion == "8":
+            print("Saliendo del programa...")
+            break
+        else:
+            print("Opción inválida. Por favor, seleccione una opción válida.")
+
+if __name__ == "__main__":
+    menu()
