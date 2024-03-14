@@ -125,3 +125,37 @@ def agregar_implante(sistema):
         numero_electrodos = input("Ingrese el número de electrodos: ")
         inalambrico = input("Es inalámbrico? (Sí / No): ").lower() == "sí"
         sistema.agregar_implante(Marcapasos(tipo, material, tamaño, frecuencia_estimulacion, numero_electrodos, inalambrico))
+
+    elif tipo_implante.lower() == "stent coronario":
+            tipo = tipo_implante
+            material = input("Ingrese el material del stent coronario: ")
+            tamaño = input("Ingrese el tamaño del stent coronario: ")
+            longitud = input("Ingrese la longitud del stent coronario (en mm): ")
+            diámetro = input("Ingrese el diámetro del stent coronario (en mm): ")
+            sistema.agregar_implante(StentCoronario(tipo, material, tamaño, longitud, diámetro))
+
+    elif tipo_implante.lower() == "implante dental":
+        tipo = tipo_implante
+        material = input("Ingrese el material del implante dental: ")
+        tamaño = input("Ingrese el tamaño del implante dental: ")
+        forma = input("Ingrese la forma del implante dental (cilíndrico / cónico / raíz cuadrada): ")
+        sistema_fijacion = input("Ingrese el sistema de fijación del implante dental (roscado / cementado): ")
+        sistema.agregar_implante(ImplanteDental(tipo, material, tamaño, forma, sistema_fijacion))
+
+    elif tipo_implante.lower() == "implante de rodilla":
+        tipo = tipo_implante
+        material = input("Ingrese el material del implante de rodilla: ")
+        tamaño = input("Ingrese el tamaño del implante de rodilla: ")
+        fijacion = input("Ingrese el método de fijación del implante de rodilla: ")
+        sistema.agregar_implante(ProtesisRodilla(tipo, material, tamaño, fijacion))
+
+    elif tipo_implante.lower() == "implante de cadera":
+        tipo = tipo_implante
+        material = input("Ingrese el material del implante de cadera: ")
+        tamaño = input("Ingrese el tamaño del implante de cadera: ")
+        fijacion = input("Ingrese el método de fijación del implante de cadera: ")
+        sistema.agregar_implante(ProtesisCadera(tipo, material, tamaño, fijacion))
+    else:
+        print("Tipo de implante no válido.")
+
+    
