@@ -108,3 +108,9 @@ class SistemaGestionImplantes:
         for implante in self._inventario:
             if implante._id == id_implante:
                 implante.registrar_mantenimiento(fecha_mantenimiento)
+
+    def visualizar_inventario(self):
+        id_implante = int(input("Ingrese el ID del implante que desea visualizar: "))
+        for implante in self._inventario:
+            if implante._id == id_implante:
+                print(implante)
